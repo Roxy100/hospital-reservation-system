@@ -4,6 +4,8 @@ import { ko } from 'date-fns/esm/locale';
 import 'react-datepicker/dist/react-datepicker.css';
 import styled from 'styled-components';
 
+import ScheduleList from '../Components/ScheduleList';
+
 const Schedule = () => {
   const [checkInDate, setCheckInDate] = useState(new Date());
 
@@ -18,6 +20,7 @@ const Schedule = () => {
           selected={checkInDate}
           onChange={date => setCheckInDate(date)}
         />
+        <ScheduleList checkInDate={checkInDate} />
       </div>
     </StyledSchedule>
   );
