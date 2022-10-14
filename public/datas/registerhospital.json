@@ -6,7 +6,7 @@
       "reservationHours": [
         {
           "hourId": null,
-          "firstHour": "예약시간을 선택하세요"
+          "hour": "예약시간을 선택하세요"
         }
       ]
     },
@@ -16,15 +16,15 @@
       "reservationHours": [
         {
           "hourId": 1,
-          "firstHour": "10:00"
+          "hour": "10:00"
         },
         {
           "hourId": 2,
-          "secondHour": "10:30"
+          "hour": "10:30"
         },
         {
           "hourId": 3,
-          "thirdHour": "11:00"
+          "hour": "11:00"
         }
       ]
     },
@@ -34,15 +34,15 @@
       "reservationHours": [
         {
           "hourId": 1,
-          "firstHour": "09:30"
+          "hour": "09:30"
         },
         {
           "hourId": 2,
-          "secondHour": "13:00"
+          "hour": "13:00"
         },
         {
           "hourId": 3,
-          "thirdHour": "15:00"
+          "hour": "15:00"
         }
       ]
     },
@@ -52,15 +52,15 @@
       "reservationHours": [
         {
           "hourId": 1,
-          "firstHour": "10:00"
+          "hour": "10:00"
         },
         {
           "hourId": 2,
-          "firstHour": "12:30"
+          "hour": "12:30"
         },
         {
           "hourId": 3,
-          "thirdHour": "13:00"
+          "hour": "13:00"
         }
       ]
     },
@@ -70,15 +70,15 @@
       "reservationHours": [
         {
           "hourId": 1,
-          "firstHour": "09:30"
+          "hour": "09:30"
         },
         {
           "hourId": 2,
-          "secondHour": "14:30"
+          "hour": "14:30"
         },
         {
           "hourId": 3,
-          "thirdHour": "15:30"
+          "hour": "15:30"
         }
       ]
     },
@@ -88,15 +88,15 @@
       "reservationHours": [
         {
           "hourId": 1,
-          "firstHour": "10:00"
+          "hour": "10:00"
         },
         {
           "hourId": 2,
-          "secondHour": "15:30"
+          "hour": "15:30"
         },
         {
           "hourId": 3,
-          "thirdHour": "17:00"
+          "hour": "17:00"
         }
       ]
     }

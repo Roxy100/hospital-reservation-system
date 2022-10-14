@@ -3,16 +3,22 @@ import styled from 'styled-components';
 
 const Register = () => {
   const [hospitalList, setHospitalList] = useState([]);
-  // const [reservationHoursList, setReservationHoursList] = useState([]);
+  const [hospital, setHospital] = useState({});
 
   useEffect(() => {
     fetch('/datas/registerhospital.json')
       .then(res => res.json())
       .then(res => {
         setHospitalList(res.data);
-        // setReservationHoursList(res.data.reservationHours);
       });
   }, []);
+
+  const handleDropHospital = e => {
+    const { value } = e.target;
+    setHospital(
+      hospitalList.find(hospital => hospital.hostpitalName === value)
+    );
+  };
 
   return (
     <StyledRegister>
@@ -34,7 +40,10 @@ const Register = () => {
             <div className="hospital_container box">
               <div className="hospital_title box_title">병원이름</div>
               <div className="hospital_dropdown_container box_content_container">
-                <select className="hospital_dropdown_select box_content">
+                <select
+                  className="hospital_dropdown_select box_content"
+                  onChange={handleDropHospital}
+                >
                   {hospitalList &&
                     hospitalList.map((hospital, index) => {
                       return (
@@ -50,16 +59,14 @@ const Register = () => {
               <div className="reservation_time_title box_title">예약시간</div>
               <div className="reservation_time_dropdown_container box_content_container">
                 <select className="reservation_time_dropdown_select box_content">
-                  {hospitalList.reservationHours &&
-                    hospitalList.reservationHours.map(
-                      (reservationHour, index) => {
-                        return (
-                          <option key={reservationHour.hourId}>
-                            {reservationHour.firstHour}
-                          </option>
-                        );
-                      }
-                    )}
+                  {hospital.reservationHours &&
+                    hospital.reservationHours.map((reservationHour, index) => {
+                      return (
+                        <option key={reservationHour.hourId}>
+                          {reservationHour.hour}
+                        </option>
+                      );
+                    })}
                 </select>
               </div>
             </div>
