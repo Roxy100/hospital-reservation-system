@@ -1,0 +1,104 @@
+{
+  "data": [
+    {
+      "hospitalId": null,
+      "hospitalName": "병원이름을 선택하세요",
+      "reservationHours": [
+        {
+          "hourId": null,
+          "firstHour": "예약시간을 선택하세요"
+        }
+      ]
+    },
+    {
+      "hospitalId": 1,
+      "hospitalName": "삼성서울병원",
+      "reservationHours": [
+        {
+          "hourId": 1,
+          "firstHour": "10:00"
+        },
+        {
+          "hourId": 2,
+          "secondHour": "10:30"
+        },
+        {
+          "hourId": 3,
+          "thirdHour": "11:00"
+        }
+      ]
+    },
+    {
+      "hospitalId": 2,
+      "hospitalName": "여의도서울성모병원",
+      "reservationHours": [
+        {
+          "hourId": 1,
+          "firstHour": "09:30"
+        },
+        {
+          "hourId": 2,
+          "secondHour": "13:00"
+        },
+        {
+          "hourId": 3,
+          "thirdHour": "15:00"
+        }
+      ]
+    },
+    {
+      "hospitalId": 3,
+      "hospitalName": "강남서울성모병원",
+      "reservationHours": [
+        {
+          "hourId": 1,
+          "firstHour": "10:00"
+        },
+        {
+          "hourId": 2,
+          "firstHour": "12:30"
+        },
+        {
+          "hourId": 3,
+          "thirdHour": "13:00"
+        }
+      ]
+    },
+    {
+      "hospitalId": 4,
+      "hospitalName": "고려대학교병원",
+      "reservationHours": [
+        {
+          "hourId": 1,
+          "firstHour": "09:30"
+        },
+        {
+          "hourId": 2,
+          "secondHour": "14:30"
+        },
+        {
+          "hourId": 3,
+          "thirdHour": "15:30"
+        }
+      ]
+    },
+    {
+      "hospitalId": 5,
+      "hospitalName": "강남세브란스병원",
+      "reservationHours": [
+        {
+          "hourId": 1,
+          "firstHour": "10:00"
+        },
+        {
+          "hourId": 2,
+          "secondHour": "15:30"
+        },
+        {
+          "hourId": 3,
+          "thirdHour": "17:00"
+        }
+      ]
+    }
+  ]
+}
