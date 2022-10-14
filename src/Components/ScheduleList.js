@@ -35,21 +35,19 @@ const ScheduleList = ({ checkInDate }) => {
                     {`${dayOfWeek}요일 ${schedule.hospitalHour}`}
                   </li>
                   <li className="reservation_container">
-                    <div className="reservation_hour">
-                      {schedule.reservationHour}
-                    </div>
-                    {/* <ul className="reservation_hours">
+                    <ul className="reservation_hours">
+                      {console.log('확인', scheduleList.reservationHours)}
                       {scheduleList.reservationHours &&
-                        scheduleList.reservationHours.map((hour, index) => {
-                          {
-                            <li key={hour.hourId}>
-                              <span>{hour.firstHour}</span>
-                              <span>{hour.secondHour}</span>
-                              <span>{hour.thirdHour}</span>
-                            </li>;
+                        scheduleList.reservationHours.map(
+                          (reservationHour, index) => {
+                            return (
+                              <li key={reservationHour.hourId}>
+                                <span>{reservationHour.Hour}</span>
+                              </li>
+                            );
                           }
-                        })}
-                    </ul> */}
+                        )}
+                    </ul>
                     {currentTime}
                     <div className="reservationable">예약 가능</div>
                     <div className="no_reservationable">예약 불가능</div>
@@ -104,7 +102,7 @@ const StyledScheduleList = styled.div`
           justify-content: center;
           align-items: center;
 
-          .reservation_hour {
+          .reservation_hours {
             margin: 10px;
             font-size: 22px;
           }
