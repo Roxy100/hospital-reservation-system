@@ -15,9 +15,7 @@ const Register = () => {
 
   const handleDropHospital = e => {
     const { value } = e.target;
-    setHospital(
-      hospitalList.find(hospital => hospital.hostpitalName === value)
-    );
+    setHospital(hospitalList.find(hospital => hospital.hospitalName === value));
   };
 
   return (
@@ -59,14 +57,13 @@ const Register = () => {
               <div className="reservation_time_title box_title">예약시간</div>
               <div className="reservation_time_dropdown_container box_content_container">
                 <select className="reservation_time_dropdown_select box_content">
-                  {hospital.reservationHours &&
-                    hospital.reservationHours.map((reservationHour, index) => {
-                      return (
-                        <option key={reservationHour.hourId}>
-                          {reservationHour.hour}
-                        </option>
-                      );
-                    })}
+                  {hospital?.reservationHours?.map((reservationHour, index) => {
+                    return (
+                      <option key={reservationHour.hourId}>
+                        {reservationHour.hour}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
             </div>
@@ -116,7 +113,7 @@ const StyledRegister = styled.div`
       padding: 16px;
       border: 1px solid black;
       width: 1000px;
-      height: 40vh;
+      height: 45vh;
 
       .register_form {
         padding: 10px 0;
