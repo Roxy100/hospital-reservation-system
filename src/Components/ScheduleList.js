@@ -36,13 +36,12 @@ const ScheduleList = ({ checkInDate }) => {
                   </li>
                   <li className="reservation_container">
                     <ul className="reservation_hours">
-                      {console.log('확인', scheduleList.reservationHours)}
-                      {scheduleList.reservationHours &&
-                        scheduleList.reservationHours.map(
+                      {schedule.reservationHours &&
+                        schedule.reservationHours.map(
                           (reservationHour, index) => {
                             return (
                               <li key={reservationHour.hourId}>
-                                <span>{reservationHour.Hour}</span>
+                                <span>{reservationHour.hour}</span>
                               </li>
                             );
                           }
