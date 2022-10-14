@@ -4,13 +4,39 @@
       "scheduleListId": 1,
       "hospitalName": "삼성서울병원",
       "hospitalHour": "10:00 ~ 18:00",
-      "reservationHour": "10:00"
+      "reservationHours": [
+        {
+          "hourId": 1,
+          "Hour": "10:00"
+        },
+        {
+          "hourId": 2,
+          "Hour": "10:30"
+        },
+        {
+          "hourId": 3,
+          "Hour": "11:00"
+        }
+      ]
     },
     {
       "scheduleListId": 2,
       "hospitalName": "여의도서울성모병원",
       "hospitalHour": "09:00 ~ 18:00",
-      "reservationHour": "15:00"
+      "reservationHours": [
+        {
+          "hourId": 1,
+          "Hour": "09:30"
+        },
+        {
+          "hourId": 2,
+          "Hour": "13:00"
+        },
+        {
+          "hourId": 3,
+          "Hour": "15:00"
+        }
+      ]
     },
     {
       "scheduleListId": 3,
@@ -18,10 +44,16 @@
       "hospitalHour": "08:30 ~ 18:00",
       "reservationHours": [
         {
+          "hourId": 1,
+          "Hour": "10:00"
+        },
+        {
+          "hourId": 2,
+          "Hour": "12:30"
+        },
+        {
           "hourId": 3,
-          "firstHour": "10:00",
-          "secondHour": "12:30",
-          "thirdHour": "13:00"
+          "Hour": "13:00"
         }
       ]
     },
@@ -31,10 +63,16 @@
       "hospitalHour": "09:30 ~ 18:00",
       "reservationHours": [
         {
-          "hourId": 4,
-          "firstHour": "09:30",
-          "secondHour": "14:30",
-          "thirdHour": "15:30"
+          "hourId": 1,
+          "Hour": "09:30"
+        },
+        {
+          "hourId": 2,
+          "Hour": "14:30"
+        },
+        {
+          "hourId": 3,
+          "Hour": "15:30"
         }
       ]
     },
@@ -44,10 +82,16 @@
       "hospitalHour": "08:00 ~ 18:00",
       "reservationHours": [
         {
-          "hourId": 5,
-          "firstHour": "10:00",
-          "secondHour": "15:30",
-          "thirdHour": "17:00"
+          "hourId": 1,
+          "Hour": "10:00"
+        },
+        {
+          "hourId": 2,
+          "Hour": "15:30"
+        },
+        {
+          "hourId": 3,
+          "Hour": "17:00"
         }
       ]
     }
