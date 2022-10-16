@@ -8,7 +8,7 @@ const Reservation = () => {
   const [reservationList, setReservationList] = useState([]);
 
   useEffect(() => {
-    fetch('/datas/reservationlist.json')
+    fetch('/data/reservationList.json')
       .then(res => res.json())
       .then(res => {
         if (res.data.length > 0) {
@@ -17,11 +17,13 @@ const Reservation = () => {
       });
   }, []);
 
+  const data = useMemo(() => reservationList, [reservationList]);
+
   return (
     <StyledReservation>
       <div className="reservation_container">
         <h3 className="reservation_title">병원 예약 내역 조회</h3>
-        <ReservationTable columns={columns} data={reservationList} />
+        <ReservationTable columns={columns} data={data} />
       </div>
     </StyledReservation>
   );

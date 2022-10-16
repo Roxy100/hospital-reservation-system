@@ -14,7 +14,7 @@ const ScheduleList = ({ checkInDate }) => {
   let currentTime = hours + ':' + minutes;
 
   useEffect(() => {
-    fetch('/datas/schedulelist.json')
+    fetch('/data/scheduleList.json')
       .then(res => res.json())
       .then(res => {
         setScheduleList(res.data);

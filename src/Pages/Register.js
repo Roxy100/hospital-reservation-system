@@ -18,7 +18,7 @@ const Register = () => {
   const [hospital, setHospital] = useState({});
 
   useEffect(() => {
-    fetch('/datas/registerhospital.json')
+    fetch('/data/registerHospitalList.json')
       .then(res => res.json())
       .then(res => {
         setHospitalList(res.data);
