@@ -8,11 +8,6 @@ const ScheduleList = ({ checkInDate }) => {
   const week = ['일', '월', '화', '수', '목', '금', '토'];
   let dayOfWeek = week[checkInDate.getDay()];
 
-  // 해당날짜의 시간/분
-  let hours = ('0' + checkInDate.getHours()).slice(-2);
-  let minutes = ('0' + checkInDate.getMinutes()).slice(-2);
-  let currentTime = hours + ':' + minutes;
-
   useEffect(() => {
     fetch('/data/scheduleList.json')
       .then(res => res.json())
@@ -34,23 +29,21 @@ const ScheduleList = ({ checkInDate }) => {
                   <li className="hospital_hour">
                     {`${dayOfWeek}요일 ${schedule.hospitalHour}`}
                   </li>
-                  <li className="reservation_container">
-                    <ul className="reservation_hours">
+                  <div className="reservation_container">
+                    <div className="reservation_hours">
                       {schedule.reservationHours &&
                         schedule.reservationHours.map(
                           (reservationHour, index) => {
                             return (
-                              <li key={reservationHour.hourId}>
-                                <span>{reservationHour.hour}</span>
-                              </li>
+                              <span key={reservationHour.hourId}>
+                                {reservationHour.hour}
+                              </span>
                             );
                           }
                         )}
-                    </ul>
-                    {currentTime}
-                    <div className="reservationable">예약 가능</div>
-                    <div className="no_reservationable">예약 불가능</div>
-                  </li>
+                    </div>
+                    <div className="reservation_box">예약 가능</div>
+                  </div>
                 </li>
               );
             })}
@@ -77,7 +70,7 @@ const StyledScheduleList = styled.div`
 
     .schedule_component {
       width: 600px;
-      border: 1px solid black;
+      border: 5px solid black;
       border-radius: 20px;
 
       li {
@@ -100,18 +93,23 @@ const StyledScheduleList = styled.div`
           display: flex;
           justify-content: center;
           align-items: center;
+          margin-top: 20px;
 
           .reservation_hours {
             margin: 10px;
             font-size: 22px;
+
+            span {
+              margin: 0 10px;
+            }
           }
-          .reservationable {
+          .reservation_box {
+            padding: 2px;
+            font-weight: 600;
+            background-color: #add8e6;
             color: blue;
-            font-weight: 600;
-          }
-          .no_reservationable {
-            color: red;
-            font-weight: 600;
+            border: 2px solid blue;
+            border-radius: 3px;
           }
         }
       }
