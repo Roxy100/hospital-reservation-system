@@ -11,9 +11,7 @@ const Reservation = () => {
     fetch('/data/reservationList.json')
       .then(res => res.json())
       .then(res => {
-        if (res.data.length > 0) {
-          setReservationList(res.data);
-        }
+        setReservationList(res.data);
       });
   }, []);
 
