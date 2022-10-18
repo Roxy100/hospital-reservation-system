@@ -52,21 +52,24 @@ const Register = () => {
               <div className="box">
                 <div className="box_title another_title">병원이름</div>
                 <div className="box_content_container">
-                  <Controller
+                  {/* <Controller
                     name="hospitalName"
                     control={control}
-                    rules={{ required: true }}
                     render={({ field: { value, onChange } }) => (
                       <Select
                         className="box_content"
                         placeholder="병원이름을 선택하세요"
                         onChange={handleDropHospital}
-                        options={hospitalList}
+                        options={hospitalList.hospitalName}
                         value={value} // 여기서 map을 돌려야 할 것 같은...
                       />
                     )}
-                  />
-                  {/* <select className="box_content" onChange={handleDropHospital}>
+                  /> */}
+                  <select
+                    className="box_content"
+                    {...register('hospitalName')}
+                    onChange={handleDropHospital}
+                  >
                     {hospitalList &&
                       hospitalList.map((hospital, index) => {
                         return (
@@ -75,16 +78,15 @@ const Register = () => {
                           </option>
                         );
                       })}
-                  </select> */}
+                  </select>
                 </div>
               </div>
               <div className="box">
                 <div className="box_title another_title">예약시간</div>
                 <div className="box_content_container">
-                  <Controller
+                  {/* <Controller
                     name="reservationHour"
                     control={control}
-                    rules={{ required: true }}
                     render={({ field }) => (
                       <Select
                         className="box_content"
@@ -93,8 +95,11 @@ const Register = () => {
                         value={field.value} // 여기서 map을 돌려야 할 것 같은...
                       />
                     )}
-                  />
-                  {/* <select className=" box_content">
+                  /> */}
+                  <select
+                    className=" box_content"
+                    {...register('reservation_hour')}
+                  >
                     {hospital?.reservationHours?.map(
                       (reservationHour, index) => {
                         return (
@@ -104,7 +109,7 @@ const Register = () => {
                         );
                       }
                     )}
-                  </select> */}
+                  </select>
                 </div>
               </div>
               <div className="box">
@@ -180,9 +185,9 @@ const StyledRegister = styled.div`
             font-weight: 600;
           }
 
-          .another_title {
+          /* .another_title {
             margin-top: 18px;
-          }
+          } */
 
           .box_content_container {
             width: 80%;
