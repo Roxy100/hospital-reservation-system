@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "bookerId": "임지영",
+      "hospitalName": "삼성서울병원",
+      "reservationHour": "10:00",
+      "reservationType": "진료"
+    },
+    {
+      "bookerId": "홍길동",
+      "hospitalName": "여의도서울성모병원",
+      "reservationHour": "09:30",
+      "reservationType": "검진"
+    },
+    {
+      "bookerId": "정경수",
+      "hospitalName": "강남서울성모병원",
+      "reservationHour": "10:00",
+      "reservationType": "검진"
+    },
+    {
+      "bookerId": "강하은",
+      "hospitalName": "고려대학교병원",
+      "reservationHour": "14:30",
+      "reservationType": "진료"
+    },
+    {
+      "bookerId": "한우진",
+      "hospitalName": "강남세브란스병원",
+      "reservationHour": "10:00",
+      "reservationType": "검진"
+    }
+  ]
+}

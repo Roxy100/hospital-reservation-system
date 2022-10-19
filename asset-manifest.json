@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hospital-reservation-system/static/css/main.a941eb98.css",
+    "main.js": "/hospital-reservation-system/static/js/main.c46a775c.js",
+    "index.html": "/hospital-reservation-system/index.html",
+    "main.a941eb98.css.map": "/hospital-reservation-system/static/css/main.a941eb98.css.map",
+    "main.c46a775c.js.map": "/hospital-reservation-system/static/js/main.c46a775c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a941eb98.css",
+    "static/js/main.c46a775c.js"
+  ]
+}
