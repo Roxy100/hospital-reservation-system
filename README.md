@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# 프리온보딩 개인 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 병원 예약 시스템
 
-## Available Scripts
+<br/>
 
-In the project directory, you can run:
+# 소개
 
-### `npm start`
+#### ✅ 프리온보딩 4차 과제
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 기간
 
-### `npm test`
+2022/10/11 ~ 19
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br/>
 
-### `npm run build`
+# 배포 링크
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://hospital-reservation-system.netlify.app/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 사용된 기술 및 라이브러리
 
-### `npm run eject`
+> JavaScript
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+> React
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> fetch
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> styled-reset
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> styled-components
 
-## Learn More
+> react-datepicker
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> date-fns
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> react-hook-form
 
-### Code Splitting
+> react-table
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br/>
 
-### Analyzing the Bundle Size
+# 프로젝트 설치 및 실행 방법
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+✅ 설치방법
 
-### Making a Progressive Web App
+1. Node.JS를 다운받아 설치해주세요. https://nodejs.org/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. 리포지토리를 클론해주세요.
 
-### Advanced Configuration
+```
+ git clone https://github.com/Roxy100/hospital-reservation-system.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. dependencies를 설치해주세요.
 
-### Deployment
+```
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+✅ 실행방법
 
-### `npm run build` fails to minify
+1. 다음 명령어를 이용해 Dev server를 실행해주세요.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+npm start
+```
+
+2. 브라우저에서 <http://localhost:3000>에 접속해주세요.
+
+<br/>
+
+# 주요기능 및 설명
+
+### 1. 메인 페이지
+
+- 메인 페이지로 들어갔을 때, 3개의 페이지로 들어갈 수 있는 link 태그로 구현하여 클릭했을 때, 해당 페이지로 이동하게 했습니다.
+
+### 2. 병원 예약 가능 목록 페이지
+
+- 해당 날짜를 클릭하면, 선택가능한 날짜만 선택할 수 있게 UI 라이브러리를 이용한 커스텀 설정으로 접목했습니다.
+- 그리고 그 날짜를 선택하면 목록리스트에 해당 요일이 변화하는 것도 넣어주었습니다.
+- 예약가능 목록 페이지를 확인하고, 등록 페이지로 갈 수 있도록 버튼 UI를 구현하였습니다.
+
+### 3. 병원 예약 등록 페이지
+
+- 만약, 예약자이름을 넣지 않을 시 alert창과 에러 메시지로 구현하였습니다. 그리고 이름이 최소 3글자 이상이어야 가능한 것도 넣어주었습니다.
+- 해당 병원이름을 선택하면 해당하는 예약시간들이 나오도록 기능구현하였습니다.
+- 예약자, 병원이름, 예약시간, 예약종류 선택하고, 등록버튼을 눌렀을 때, alert창으로 선택한 해당 값들이 나오도록 구현하였습니다.
+
+### 4. 병원 예약 내역 조회 페이지
+
+- react-table 라이브러리를 이용하여 가짜 데이타 조회 목록을 만든 후, 예약자이름으로 검색시, 해당 객체 (행)로 나오게끔 구현하려했으나, 제대로 구현하지 못한 점이 아쉽습니다.
