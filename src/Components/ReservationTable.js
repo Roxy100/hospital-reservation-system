@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTable, useGlobalFilter } from 'react-table';
+import { useTable, useGlobalFilter, useSortBy } from 'react-table';
 import ReservationSearch from './ReservationSearch';
 
 const ReservationTable = ({ columns, data }) => {
@@ -11,7 +11,7 @@ const ReservationTable = ({ columns, data }) => {
     rows,
     prepareRow,
     setGlobalFilter,
-  } = useTable({ columns, data }, useGlobalFilter);
+  } = useTable({ columns, data }, useGlobalFilter, useSortBy);
 
   return (
     <StyledReservationTable>
@@ -22,7 +22,7 @@ const ReservationTable = ({ columns, data }) => {
             {headerGroups.map(headerGroup => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map(column => (
-                  <th {...column.getHeaderProps()}>
+                  <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                     {column.render('Header')}
                   </th>
                 ))}
