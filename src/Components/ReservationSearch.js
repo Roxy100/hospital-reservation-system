@@ -10,7 +10,7 @@ const ReservationSearch = ({ onSubmit }) => {
   return (
     <StyledReservationSearch>
       <form onSubmit={handleSubmit} className="search_form">
-        <input bookerId="filter" />
+        <input bookerid="filter" />
         <button>검색</button>
       </form>
     </StyledReservationSearch>
