@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useForm, Controller } from 'react-hook-form';
-import Select from 'react-select';
+import { useForm } from 'react-hook-form';
 
 const Register = () => {
   const {
     register,
-    control,
     handleSubmit,
-    formState: { isSubmitting },
+    formState: { isSubmitting, errors },
   } = useForm();
+
   const onSubmit = data => {
     alert(JSON.stringify(data));
+  };
+
+  const handleError = errors => {
+    alert(errors.message);
+  };
+
+  const registerOptions = {
+    bookerId: {
+      required: '예약자 이름은 필수!',
+      minLength: {
+        value: 3,
+        message: '예약자 이름은 최소 3개의 글자 이상!',
+      },
+    },
   };
 
   const [hospitalList, setHospitalList] = useState([]);
@@ -34,7 +47,7 @@ const Register = () => {
     <StyledRegister>
       <div className="register_container">
         <h3 className="register_title">병원 예약 등록</h3>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit, handleError)}>
           <div className="register_form_container">
             <div className="register_form">
               <div className="box">
@@ -43,28 +56,19 @@ const Register = () => {
                   <input
                     type="text"
                     id="bookerId"
-                    {...register('bookerId', { required: true })}
+                    name="bookerId"
+                    {...register('bookerId', registerOptions.bookerId)}
                     defaultValue=""
                     className="box_content"
                   />
+                  <small className="text_danger">
+                    {errors?.bookerId && errors.bookerId.message}
+                  </small>
                 </div>
               </div>
               <div className="box">
                 <div className="box_title another_title">병원이름</div>
                 <div className="box_content_container">
-                  {/* <Controller
-                    name="hospitalName"
-                    control={control}
-                    render={({ field: { value, onChange } }) => (
-                      <Select
-                        className="box_content"
-                        placeholder="병원이름을 선택하세요"
-                        onChange={handleDropHospital}
-                        options={hospitalList.hospitalName}
-                        value={value} // 여기서 map을 돌려야 할 것 같은...
-                      />
-                    )}
-                  /> */}
                   <select
                     className="box_content"
                     {...register('hospitalName')}
@@ -84,18 +88,6 @@ const Register = () => {
               <div className="box">
                 <div className="box_title another_title">예약시간</div>
                 <div className="box_content_container">
-                  {/* <Controller
-                    name="reservationHour"
-                    control={control}
-                    render={({ field }) => (
-                      <Select
-                        className="box_content"
-                        placeholder="예약시간을 선택하세요"
-                        options={hospital.reservationHours}
-                        value={field.value} // 여기서 map을 돌려야 할 것 같은...
-                      />
-                    )}
-                  /> */}
                   <select
                     className=" box_content"
                     {...register('reservation_hour')}
@@ -185,16 +177,18 @@ const StyledRegister = styled.div`
             font-weight: 600;
           }
 
-          /* .another_title {
-            margin-top: 18px;
-          } */
-
           .box_content_container {
             width: 80%;
+            display: flex;
 
             .box_content {
               padding: 10px;
               border-radius: 8px;
+            }
+
+            .text_danger {
+              margin-left: 10px;
+              color: red;
             }
           }
 
